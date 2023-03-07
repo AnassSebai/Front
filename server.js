@@ -4,7 +4,7 @@ const port = 3000;// le port d'ecoute
 
 function main(){
     // Ajouter un middleware pour servir les fichiers statiques dans le dossier "public"
-    app.use(express.static("public"));
+    app.use(express.static("Front"));
     //on démare le serveur d'une façon qu'on écoute les requêtes entrantes 
     app.listen(port,() =>{
         console.log(`le port utilisé ${port}`);

@@ -2,10 +2,12 @@
 <html>
   <head>
     <title>Liste des clients</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://rawgit.com/codepb/jquery-template/master/jquery.loadTemplate-1.4.4.min.js"></script>
   </head>
   <body>
     <h1>Liste des clients</h1>
-    <table>
+    <table id="clientsTable">
       <thead>
         <tr>
           <th>ID</th>
@@ -14,15 +16,32 @@
         </tr>
       </thead>
       <tbody>
-        <% clients.forEach(function(client) { %>
-          <tr>
-            <td><%= client.id %></td>
-            <td><%= client.name %></td>
-            <td><%= client.email %></td>
-          </tr>
-        <% }); %>
       </tbody>
     </table>
     <a href="/clients/new">Ajouter un client</a>
+
+    <script id="clientTemplate" type="text/html">
+      <tr>
+        <td>${#}</td>
+        <td>${Nom}</td>
+        <td>${Prénom}</td>
+        <td>${Société}</td>
+        <td>${Email}</td>
+        <td>${Création}</td>
+      </tr>
+    </script>
+
+    <script>
+      $(document).ready(function() {
+        // Récupération des données des clients depuis le serveur
+        $.get('/api/clients', function(data) {
+          // Chargement des données dans le template
+          $('#clientsTable tbody').loadTemplate(
+            $('#clientTemplate'), // template
+            data // données à charger
+          );
+        });
+      });
+    </script>
   </body>
 </html>
