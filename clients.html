@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Liste des clients</title>
+  </head>
+  <body>
+    <h1>Liste des clients</h1>
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Nom</th>
+          <th>Email</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% clients.forEach(function(client) { %>
+          <tr>
+            <td><%= client.id %></td>
+            <td><%= client.name %></td>
+            <td><%= client.email %></td>
+          </tr>
+        <% }); %>
+      </tbody>
+    </table>
+    <a href="/clients/new">Ajouter un client</a>
+  </body>
+</html>

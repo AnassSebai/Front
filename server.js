@@ -1,19 +1,13 @@
 const express =require('express');
-const app = express();//initialiation
-const port = 3000;
+const app = express();//initialiation de l'instance express
+const port = 3000;// le port d'ecoute 
 
 function main(){
-
-    app.get("/", (req,res) => {
-        //const dt= new Data();
-        res.send("Hello Toto !");
-        //console.log(dt);
+    // Ajouter un middleware pour servir les fichiers statiques dans le dossier "public"
+    app.use(express.static("public"));
+    //on démare le serveur d'une façon qu'on écoute les requêtes entrantes 
+    app.listen(port,() =>{
+        console.log(`le port utilisé ${port}`);
     });
-
-    app.listen(port,function() {
-        console.log('Serveur lancÃ© sur port ${port}');
-    });
-   
-   
 }
 main();
