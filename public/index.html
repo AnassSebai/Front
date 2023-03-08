@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Liste des clients</title>
+    <script src="clients.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://rawgit.com/codepb/jquery-template/master/jquery.loadTemplate-1.4.4.min.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="card">
+            <div class="card-body">
+              <h1 class="card-title text-uppercase mb-0">Liste des clients</h1>
+              <br>
+              <a href="newClients.html" role="button" class="btn btn-primary"><i class="fa fa-user"></i> Ajouter un client</a>
+              <table id="clientsTable">
+                <thead>
+                  <tr>
+                    <th>id</th>
+                    <th>email</th>
+                    <th>first</th>
+                    <th>last</th>
+                    <th>company</th>
+                    <th>created_at</th>
+                    <th>country</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  
+                  <!-- Div pour contenir le formulaire -->
+                  <tr>
+                    <td colspan="7">
+                      <div id="addClientForm">
+                        <!-- Votre formulaire ici -->
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              <script id="clientTemplate" type="text/x-jquery-tmpl">
+                <tr>
+                  <td>${id}</td>
+                  <td>${email}</td>
+                  <td>${first}</td>
+                  <td>${last}</td>
+                  <td>${company}</td>
+                  <td>${created_at}</td>
+                  <td>${country}</td>
+                </tr>
+              </script>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
