@@ -1,71 +1,47 @@
-// Fonction pour ajouter un événement d'écouteur de formulaire
-function addEventListener() {
-  // Sélectionner le formulaire d'ajout de client par ID
-  var form = $('#addClientForm');
-
-  // Attacher un événement de soumission de formulaire au formulaire
-  form.on('submit', function(event) {
-    // Empêcher le formulaire de se soumettre normalement
+$(document).ready(function() {
+  // écoute l'événement de click sur le bouton submit du formulaire
+  $('#newClientsForm').submit(function(event) {
+    // évite le comportement par défaut de la soumission du formulaire
     event.preventDefault();
 
-    // Récupérer les données du formulaire
-    var formData = form.serialize();
+    // récupère les valeurs du formulaire
+    var email = $('#email').val();
+    var nom = $('#nom').val();
+    var prenom = $('#prenom').val();
+    var societe = $('#societe').val();
+    var pays = $('#pays').val();
+    var date = new Date().toISOString();
 
-    // Envoyer les données à la serveur via une requête AJAX POST
+    // crée un objet client avec les valeurs récupérées du formulaire
+    var client = {
+      email: email,
+      nom: nom,
+      prenom: prenom,
+      societe: societe,
+      pays: pays,
+      date: date
+    };
+
+    // envoie les données du formulaire en POST à l'API /api/clients
     $.ajax({
-      type: 'POST',
       url: '/api/clients',
-      data: formData,
-      success: function(response) {
-        // Ajouter le nouveau client au tableau
-        addClientToTable(response);
+      method: 'POST',
+      data: JSON.stringify(client),
+      contentType: 'application/json',
+      success: function(data) {
+        // ajoute le client à la fin du tableau de clients affiché sur la page
+        var id = data.id;
+        $('#clientsTable > tbody:last-child').append('<tr><td>' + id + '</td><td>' + data.email + '</td><td>' + data.nom + '</td><td>' + data.prenom + '</td><td>' + data.societe + '</td><td>' + data.pays + '</td><td>' + data.date + '</td></tr>');
 
-        // Effacer le formulaire après l'ajout
-        form[0].reset();
+        // affiche le message de succès
+        $('#message').text('Client ajouté avec succès');
 
-        // Afficher un message de confirmation
-        $('#addClientSuccess').fadeIn().delay(2000).fadeOut();
+        // vide le formulaire
+        $('#newClientsForm')[0].reset();
       },
-      error: function(error) {
-        // Afficher un message d'erreur
-        alert('Une erreur est survenue lors de l\'ajout du client.');
+      error: function(jqXHR, textStatus, errorThrown) {
+        console.log('Erreur: ' + errorThrown);
       }
     });
   });
-}
-
-// Fonction pour ajouter une ligne à un tableau avec les données d'un client
-function addClientToTable(client) {
-  $('#clientsTable tbody').append(
-    '<tr>' +
-      '<td>' + client.id + '</td>' +
-      '<td>' + client.last + '</td>' +
-      '<td>' + client.first + '</td>' +
-      '<td>' + client.company + '</td>' +
-      '<td>' + client.email + '</td>' +
-      '<td>' + client.created_at + '</td>' +
-      '<td>' + client.country + '</td>' +
-    '</tr>'
-  );
-}
-
-$(document).ready(function() {
-  // Appeler la fonction addEventListener() pour ajouter l'événement d'écouteur de formulaire
-  addEventListener();
-
-  function getData() {
-    $.get('/api/clients', function(data) {
-      console.log(data); // afficher les données récupérées dans la console
-
-      // Parcourir les données et ajouter chaque client dans le tableau
-      for (var i = 0; i < data.length; i++) {
-        addClientToTable(data[i]);
-      }
-    }).fail(function(error) {
-      console.log(error); // afficher les erreurs dans la console
-    });
-  }
-
-  // Appeler la fonction getData() au chargement de la page
-  getData();
 });
