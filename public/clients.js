@@ -1,4 +1,4 @@
-$(document).ready(function() {
+/*$(document).ready(function() {
   // écoute l'événement de click sur le bouton submit du formulaire
   $('#newClientsForm').submit(function(event) {
     // évite le comportement par défaut de la soumission du formulaire
@@ -44,7 +44,7 @@ $(document).ready(function() {
       }
     });
   });
-});
+});*/
 
 
 function getData()
