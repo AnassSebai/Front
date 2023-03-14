@@ -1,40 +1,49 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <title>Liste des clients</title>
-    <script src="clients.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="https://rawgit.com/codepb/jquery-template/master/jquery.loadTemplate-1.4.4.min.js"></script>
-  </head>
-  <body>
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12">
-          <div class="card">
-            <div class="card-body">
-              <h1 class="card-title text-uppercase mb-0">Liste des clients</h1>
-              <br>
-              <a href="newClients.html" role="button" class="btn btn-primary"><i class="fa fa-user"></i> Ajouter un client</a>
-              <table id="clientsTable">
+    <head>
+        <meta charset="utf-8">
+        <link rel='stylesheet' href="style.css">
+        <title>Liste Client</title>
+
+        <script src="clients.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="https://codepb.github.io/jquery-template/jquery.loadTemplate-0.4.3.js" type="text/javascript" charset="utf-8"></script>
+        <script id="tmpClient" type="text/html">
+            <tr>
+                <td data-content="id"></td>
+                <td data-content="nom"></td>
+                <td data-content="prenom"></td>
+                <td data-content="societe"></td>
+                <td data-content="pays"></td>
+                <td data-content="email"></td>
+                <td data-content="date"></td>
+            </tr>
+        </script>
+    </head>
+    <body>
+        <div id="conteneur">
+            <h1 id="header">Liste des clients</h1>
+            <br>
+            <a href="newClients.html" role="button" class="btn btn-primary"><i class="fa fa-user"></i> Ajouter un client</a>
+            <br>
+            <br>
+            <br>
+            <table>
                 <thead>
-                  <tr>
-                    <th>id</th>
-                    <th>email</th>
-                    <th>nom</th>
-                    <th>prenom</th>
-                    <th>societe</th>
-                    <th>pays</th>
-                    <th>date</th>
-                    
-                  </tr>
-                  <tr> <td> 1</td> <td>isidro_von@hotmail.com</td> <td> Torrey</td> <td> Veum</td> <td> Google</td> <td> Switzerland</td> <td> 12/02/1999</td></tr>
+                    <tr>
+                        <th>#</th>
+                        <th>Nom</th>
+                        <th>Prénom</th>
+                        <th>Société</th>
+                        <th>Pays</th>
+                        <th>Email</th>
+                        <th>Création</th>
+                    </tr>
                 </thead>
-              </table>
-            </div>
-          </div>
+                <tbody id="client">
+
+                </tbody>
+            </table>
         </div>
-      </div>
-    </div>
-  </body>
+    </body>
 </html>

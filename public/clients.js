@@ -45,3 +45,18 @@ $(document).ready(function() {
     });
   });
 });
+
+
+function getData()
+{
+    const tableau = 
+    [{"id":1,"email":"isidro_von@hotmail.com","prenom":"Torrey","nom":"Veum","societe":"Google","date":"2014-12-25T04:06:27.981Z","pays":"Switzerland"},
+        {"id":2,"email":"frederique19@gmail.com","prenom":"Micah","nom":"Sanford","societe":"Google","date":"2014-07-03T16:08:17.044Z","pays":"Democratic People's Republic of Korea"},
+        {"id":3,"email":"fredy54@gmail.com","prenom":"Hollis","nom":"Swift","societe":"Microsoft","date":"2014-08-18T06:15:16.731Z","pays":"Tunisia"},];
+    return tableau;
+}
+
+addEventListener("DOMContentLoaded",function () {
+    console.log("Le document est chargé");
+    $("#client").loadTemplate($("#tmpClient"),getData());
+});
