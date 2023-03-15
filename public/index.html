@@ -11,18 +11,19 @@
         <script id="tmpClient" type="text/html">
             <tr>
                 <td data-content="id"></td>
-                <td data-content="nom"></td>
-                <td data-content="prenom"></td>
-                <td data-content="societe"></td>
-                <td data-content="pays"></td>
+                <td data-content="last"></td>
+                <td data-content="first"></td>
+                <td data-content="company"></td>
+                <td data-content="country"></td>
                 <td data-content="email"></td>
-                <td data-content="date"></td>
+                <td data-content="created_at"></td>
             </tr>
         </script>
     </head>
     <body>
         <div id="conteneur">
             <h1 id="header">Liste des clients</h1>
+            
             <br>
             <a href="newClients.html" role="button" class="btn btn-primary"><i class="fa fa-user"></i> Ajouter un client</a>
             <br>
@@ -39,9 +40,18 @@
                         <th>Email</th>
                         <th>Création</th>
                     </tr>
+                    
                 </thead>
-                <tbody id="client">
-
+                <tbody id="customers">
+                    <tr>
+                        <td><span id="id"></span></td>
+                        <td><span id="last"></span></td>
+                        <td><span id="first"></span></td>
+                        <td><span id="company"></span></td>
+                        <td><span id="country"></span></td>
+                        <td><span id="email"></span></td>
+                        <td><span id="created_at"></span></td>
+                      </tr>
                 </tbody>
             </table>
         </div>

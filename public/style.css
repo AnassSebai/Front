@@ -1,3 +1,13 @@
+#header {
+  font-size: 32px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+
+
+
 /* Ajouter une bordure autour du tableau */
 table {
   border-collapse: collapse;
@@ -12,12 +22,9 @@ th {
   font-weight: bold;
   padding: 10px;
   text-align: center;
+  font-size: large;
 }
 
-/* Ajouter un style de survol de la souris pour les cellules de l'en-tête de tableau */
-th:hover {
-  background-color: #4f4f4f;
-}
 
 /* Ajouter un style alterné de ligne pour les cellules de données */
 tr:nth-child(even) {
@@ -31,7 +38,7 @@ tr:hover {
 
 /* Ajouter une bordure à toutes les cellules de tableau */
 td {
-  border: 1px solid black;
+  border: 1px solid #3f3f3f;
   padding: 8px;
   text-align: center;
 }
@@ -58,5 +65,14 @@ td {
   background-color: #ced6de;
   color: #fff;
   box-shadow: none;
+}
+
+tr:nth-child(1) {
+  background-color: #3f3f3f;
+  color: white;
+  font-weight: bold;
+  padding: 10px;
+ 
+ 
 }
 
