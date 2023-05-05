@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Modifier un client</title>
+    <style>
+      body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: #f9f9f9;
+      }
+      h1 {
+        margin-top: 20px;
+      }
+      label {
+        display: block;
+        margin-top: 20px;
+      }
+      input[type="text"] {
+        padding: 5px;
+        border-radius: 5px;
+        border: 1px solid gray;
+        width: 250px;
+        box-sizing: border-box;
+      }
+      input[type="text"]:focus {
+        outline: none;
+        border: 2px solid #4c4c4c;
+      }
+      input:invalid {
+        border: 2px solid red;
+      }
+      button {
+        margin-top: 20px;
+        background-color: #4c4c4c;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+      button:hover {
+        background-color: #2d2d2d;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Modifier un client</h1>
+    <label>Entrez l'ID du client à modifier :</label>
+    <input type="text" id="id" required />
+    <label>Email :</label>
+    <input type="text" id="email" required />
+    <label>Prénom :</label>
+    <input type="text" id="first" required />
+    <label>Nom :</label>
+    <input type="text" id="last" required />
+    <label>Entreprise :</label>
+    <input type="text" id="company" required />
+    <label>Pays :</label>
+    <input type="text" id="country" required />
+    <br />
+    <button onclick="updateClient()">Modifier</button>
+  </body>
+</html>
