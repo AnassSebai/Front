@@ -1,0 +1,33 @@
+input:placeholder-shown {
+  background-color: #f2f2f2;
+}
+
+
+.colored-input:placeholder-shown {
+  background-color: #a58888;
+}
+
+input {
+  font-size: 30px;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  margin-bottom: 10px;
+  width: 100%;
+
+}
+
+button {
+  border: 1px solid rgb(134, 134, 157);
+  background-color: rgb(99, 60, 62);
+  color: white;
+  font-size: 16px;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+h1 {
+  color: #673939;
+  text-align: center;
+  font-size: 30px;
+}

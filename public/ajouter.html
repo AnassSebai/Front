@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Ajouter</title>
+        <link rel="stylesheet" href="css/ajouter.css">
+        <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+        <script src="js/ajouter.js"></script>
+    </head>
+    <body>
+        <form id="formAddCustomer" action="http://localhost:3001/api/customers" method="post">
+            
+            <h1>Ajouter un client</h1>
+            <div class="inputs" id="newCustomer">
+                <input type="text" id="last" class="colored-input" placeholder="Nom" required>
+                <input type="text" id="first" class="colored-input" placeholder="Prénom" required>
+                <input type="email" id="email"  class="colored-input" placeholder="Email" required>
+                <input type="text" id="company" class="colored-input" placeholder="Société" required>
+                <input type="text" id="country" class="colored-input" placeholder="Pays" required>
+            </div>
+            <div align="center">
+                <button type="submit">Ajouter un client</button>
+            </div>
+        </form>
+        
+    </body>
+</html>

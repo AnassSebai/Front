@@ -1,0 +1,159 @@
+/* Tableau */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+  margin-left: 0 px;
+}
+
+thead {
+  background-color: #b36262;
+  font-weight: bold;
+  color: #fff;
+}
+
+thead th {
+  text-align: center;
+  padding: 10px;
+  border-bottom: 1px solid #671212;
+  white-space: nowrap;
+}
+
+tbody tr:hover {
+  background-color: #704545;
+}
+
+tbody td {
+  border: 1px solid #000; /* couleur noire */
+  padding: 10px;
+  text-overflow: clip;
+  word-wrap: break-word;
+  overflow: hidden;
+  max-width: 180px; 
+  
+}
+
+
+/* Pagination */
+.pagination {
+  display: flex;
+  margin-top: 20px;
+  text-align: center;
+}
+
+.pagination_li {
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+}
+
+.pagination_li li {
+  display: inline-block;
+  margin: 0;
+  padding: 5px 10px;
+  border: 1px solid #ddd;
+  background-color: #fff;
+  cursor: pointer;
+}
+
+.pagination_li li:hover {
+  background-color: #eee;
+}
+
+.pagination_li li.disabled {
+  color: #ddd;
+  cursor: default;
+}
+
+/* Bouton Ajouter */
+.addButton {
+  display: block;
+  margin: 20px auto;
+  padding: 10px;
+  background-color: #af4c4c;
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+
+}
+.addButton {
+  position: fixed;
+  top: 10px;
+  right: 20px;
+  margin-top: 0;
+  margin-right: 0;
+  display: block;
+  margin: 20px auto;
+  padding: 10px;
+  background-color: #af4c4e;
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+
+.addButton:hover {
+  background-color: #b3cbb3;
+}
+
+/* Barre de progression */
+#progressBarContainer {
+  margin-top: 20px;
+}
+
+
+.pagination {
+  display: flex;
+  justify-content: flex-start;
+  list-style: none;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 0px;
+  border-radius: 5px;
+  margin-left: 20px;
+}
+
+
+.pagination li {
+  font-size: 8px;
+  border: 1px solid;
+  padding: 10px;
+  border-radius: 5px;
+  text-decoration: none;
+  background-color: white;
+  margin-left: 3px;
+  margin-right: 3px;
+}
+
+.pagination li.current {
+  font-size: 8px;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #474747;
+  color: white;
+  overflow: visible;
+}
+
+h1 {
+  text-align: center;
+  font-size: 30px;
+  font-family: 'Roboto', sans-serif;
+  color: #7d3d3d;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+
+/* Ajoutez les propriétés suivantes pour augmenter la taille des colonnes */
+th, td {
+  width: auto;
+  max-width: none;
+}
+
+body {
+  max-width: 100000px;
+  margin: 0 auto; /* centre la page horizontalement */
+}
+
